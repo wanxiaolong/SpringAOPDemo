@@ -10,16 +10,16 @@ import org.aspectj.lang.annotation.Aspect;
 public class AroundAdviceTest {
     @Around(value="execution(* com.abc.service.*.around*(..))")
     public Object process(ProceedingJoinPoint point) throws Throwable {
-        System.out.println("Ä£ÄâÖ´ĞĞÄ¿±ê·½·¨Ç°µÄÔöÇ¿´¦Àí£ºÊÂÎñ¿ªÊ¼...");
-        //ĞŞ¸ÄÄ¿±ê·½·¨µÄ²ÎÊı
+        System.out.println("æ¨¡æ‹Ÿæ‰§è¡Œç›®æ ‡æ–¹æ³•å‰çš„å¢å¼ºå¤„ç†ï¼šäº‹åŠ¡å¼€å§‹...");
+        //ä¿®æ”¹ç›®æ ‡æ–¹æ³•çš„å‚æ•°
         Object[] params = new Object[]{"param1", 2, "param3"};
-        System.out.println("À¹½ØµÄ·½·¨£º " + point.getSignature().getDeclaringTypeName() +
+        System.out.println("æ‹¦æˆªçš„æ–¹æ³•ï¼š " + point.getSignature().getDeclaringTypeName() +
                 "." + point.getSignature().getName());
-        System.out.println("²ÎÊı£º " + Arrays.toString(point.getArgs()));
-        //Ö´ĞĞÄ¿±ê·½·¨£¬²¢±£´æÄ¿±ê·½·¨Ö´ĞĞºóµÄ·µ»ØÖµ
+        System.out.println("å‚æ•°ï¼š " + Arrays.toString(point.getArgs()));
+        //æ‰§è¡Œç›®æ ‡æ–¹æ³•ï¼Œå¹¶ä¿å­˜ç›®æ ‡æ–¹æ³•æ‰§è¡Œåçš„è¿”å›å€¼
         Object returnValue = point.proceed(params);
-        System.out.println("Ä£ÄâÖ´ĞĞÄ¿±ê·½·¨ºóµÄÔöÇ¿´¦Àí£ºÊÂÎñ½áÊø...");
-        //·µ»ØĞŞ¸ÄºóµÄ·µ»ØÖµ
-        return "·½·¨Êµ¼Ê·µ»ØÖµ£º" + returnValue + "£¬ÕâÊÇ·µ»ØÖµµÄºó×º";
+        System.out.println("æ¨¡æ‹Ÿæ‰§è¡Œç›®æ ‡æ–¹æ³•åçš„å¢å¼ºå¤„ç†ï¼šäº‹åŠ¡ç»“æŸ...");
+        //è¿”å›ä¿®æ”¹åçš„è¿”å›å€¼
+        return "æ–¹æ³•å®é™…è¿”å›å€¼ï¼š" + returnValue + "ï¼Œè¿™æ˜¯è¿”å›å€¼çš„åç¼€";
     }
 }

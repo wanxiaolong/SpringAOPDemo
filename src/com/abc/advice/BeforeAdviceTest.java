@@ -5,9 +5,9 @@ import org.aspectj.lang.annotation.Before;
 
 @Aspect
 public class BeforeAdviceTest {
-    //Æ¥Åäcom.abc.serviceÏÂµÄÀàÖĞÒÔbefore¿ªÊ¼µÄ·½·¨
+    //åŒ¹é…com.abc.serviceä¸‹çš„ç±»ä¸­ä»¥beforeå¼€å§‹çš„æ–¹æ³•
     @Before("execution(* com.abc.service.*.before*(..))")
     public void PermissionCheck() {
-        System.out.println("Ä£ÄâÈ¨ÏŞ¼ì²é");
+        System.out.println("æ¨¡æ‹Ÿæƒé™æ£€æŸ¥");
     }
 }

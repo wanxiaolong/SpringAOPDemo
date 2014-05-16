@@ -7,7 +7,7 @@ import org.aspectj.lang.annotation.Aspect;
 public class AfterThrowingAdviceTest {
     @AfterThrowing(throwing="ex",pointcut="execution(* com.abc.service.*.afterThrow*(..))")
     public void handleException(Throwable ex) {
-        System.out.println("Ä¿±ê·½·¨Å×³öÒì³££º" + ex);
-        System.out.println("Ä£ÄâÒì³£´¦Àí");
+        System.out.println("ç›®æ ‡æ–¹æ³•æŠ›å‡ºå¼‚å¸¸ï¼š" + ex);
+        System.out.println("æ¨¡æ‹Ÿå¼‚å¸¸å¤„ç†");
     }
 }

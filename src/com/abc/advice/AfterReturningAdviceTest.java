@@ -5,10 +5,10 @@ import org.aspectj.lang.annotation.Aspect;
 
 @Aspect
 public class AfterReturningAdviceTest {
-    //匹配com.abc.service下的类中以afterReturning开始的方法
+    //鍖归厤com.abc.service涓嬬殑绫讳腑浠fterReturning寮�濮嬬殑鏂规硶
     @AfterReturning(returning="returnValue", pointcut="execution(* com.abc.service.*.afterReturning(..))")
     public void log(Object returnValue){
-        System.out.println("目标方法返回值：" + returnValue);
-        System.out.println("模拟日志记录功能...");
+        System.out.println("鐩爣鏂规硶杩斿洖鍊硷細" + returnValue);
+        System.out.println("妯℃嫙鏃ュ織璁板綍鍔熻兘...");
     }
 }

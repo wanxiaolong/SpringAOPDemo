@@ -10,8 +10,8 @@ public class AccessArgAdviceTest {
             pointcut="execution(* com.abc.service.*.access*(..)) && args(time, name)",
             returning="returnValue")
     public void access(Date time, Object returnValue, String name) {
-        System.out.println("目标方法中的参数String = " + name);
-        System.out.println("目标方法中的参数Date = " + time);
-        System.out.println("目标方法的返回结果returnValue = " + returnValue);
+        System.out.println("鐩爣鏂规硶涓殑鍙傛暟String = " + name);
+        System.out.println("鐩爣鏂规硶涓殑鍙傛暟Date = " + time);
+        System.out.println("鐩爣鏂规硶鐨勮繑鍥炵粨鏋渞eturnValue = " + returnValue);
     }
 }

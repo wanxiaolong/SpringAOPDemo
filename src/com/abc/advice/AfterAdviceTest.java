@@ -7,6 +7,6 @@ import org.aspectj.lang.annotation.Aspect;
 public class AfterAdviceTest {
     @After(value="execution(* com.abc.service.*.afterAdvice*(..))")
     public void releaseResource() {
-        System.out.println("Ä£ÄâÊÍ·ÅÊı¾İ¿âÁ¬½Ó");
+        System.out.println("æ¨¡æ‹Ÿé‡Šæ”¾æ•°æ®åº“è¿æ¥");
     }
 }

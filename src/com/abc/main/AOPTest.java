@@ -17,9 +17,9 @@ public class AOPTest {
         //manager.afterThrowing();
         //manager.afterAdvice();
         //String result = manager.aroundAdvice("aa", 1, "bb");
-        //System.out.println("返回值：" + result);
+        //System.out.println("杩斿洖鍊硷細" + result);
         //String result = manager.manyAdvices("aa", "bb");
-        //System.out.println("Test方法中调用切点方法的返回值：" + result);
+        //System.out.println("Test鏂规硶涓皟鐢ㄥ垏鐐规柟娉曠殑杩斿洖鍊硷細" + result);
         manager.accessAdvice(new Date(), "test");
     }
 }

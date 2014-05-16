@@ -14,42 +14,42 @@ import org.aspectj.lang.annotation.Before;
 public class AdviceTest {
     @Around("execution(* com.abc.service.*.many*(..))")
     public Object process(ProceedingJoinPoint point) throws Throwable {
-        System.out.println("@Around£ºÖ´ĞĞÄ¿±ê·½·¨Ö®Ç°...");
-        //·ÃÎÊÄ¿±ê·½·¨µÄ²ÎÊı£º
+        System.out.println("@Aroundï¼šæ‰§è¡Œç›®æ ‡æ–¹æ³•ä¹‹å‰...");
+        //è®¿é—®ç›®æ ‡æ–¹æ³•çš„å‚æ•°ï¼š
         Object[] args = point.getArgs();
         if (args != null && args.length > 0 && args[0].getClass() == String.class) {
-            args[0] = "¸Ä±äºóµÄ²ÎÊı1";
+            args[0] = "æ”¹å˜åçš„å‚æ•°1";
         }
-        //ÓÃ¸Ä±äºóµÄ²ÎÊıÖ´ĞĞÄ¿±ê·½·¨
+        //ç”¨æ”¹å˜åçš„å‚æ•°æ‰§è¡Œç›®æ ‡æ–¹æ³•
         Object returnValue = point.proceed(args);
-        System.out.println("@Around£ºÖ´ĞĞÄ¿±ê·½·¨Ö®ºó...");
-        System.out.println("@Around£º±»Ö¯ÈëµÄÄ¿±ê¶ÔÏóÎª£º" + point.getTarget());
-        return "Ô­·µ»ØÖµ£º" + returnValue + "£¬ÕâÊÇ·µ»Ø½á¹ûµÄºó×º";
+        System.out.println("@Aroundï¼šæ‰§è¡Œç›®æ ‡æ–¹æ³•ä¹‹å...");
+        System.out.println("@Aroundï¼šè¢«ç»‡å…¥çš„ç›®æ ‡å¯¹è±¡ä¸ºï¼š" + point.getTarget());
+        return "åŸè¿”å›å€¼ï¼š" + returnValue + "ï¼Œè¿™æ˜¯è¿”å›ç»“æœçš„åç¼€";
     }
     @Before("execution(* com.abc.service.*.many*(..))")
     public void permissionCheck(JoinPoint point) {
-        System.out.println("@Before£ºÄ£ÄâÈ¨ÏŞ¼ì²é...");
-        System.out.println("@Before£ºÄ¿±ê·½·¨Îª£º" + point.getSignature().getDeclaringTypeName() + 
+        System.out.println("@Beforeï¼šæ¨¡æ‹Ÿæƒé™æ£€æŸ¥...");
+        System.out.println("@Beforeï¼šç›®æ ‡æ–¹æ³•ä¸ºï¼š" + point.getSignature().getDeclaringTypeName() + 
                 "." + point.getSignature().getName());
-        System.out.println("@Before£º²ÎÊıÎª£º" + Arrays.toString(point.getArgs()));
-        System.out.println("@Before£º±»Ö¯ÈëµÄÄ¿±ê¶ÔÏóÎª£º" + point.getTarget());
+        System.out.println("@Beforeï¼šå‚æ•°ä¸ºï¼š" + Arrays.toString(point.getArgs()));
+        System.out.println("@Beforeï¼šè¢«ç»‡å…¥çš„ç›®æ ‡å¯¹è±¡ä¸ºï¼š" + point.getTarget());
     }
     @AfterReturning(pointcut="execution(* com.abc.service.*.many*(..))", returning="returnValue")
     public void log(JoinPoint point, Object returnValue) {
-        System.out.println("@AfterReturning£ºÄ£ÄâÈÕÖ¾¼ÇÂ¼¹¦ÄÜ...");
-        System.out.println("@AfterReturning£ºÄ¿±ê·½·¨Îª£º" + point.getSignature().getDeclaringTypeName() + 
+        System.out.println("@AfterReturningï¼šæ¨¡æ‹Ÿæ—¥å¿—è®°å½•åŠŸèƒ½...");
+        System.out.println("@AfterReturningï¼šç›®æ ‡æ–¹æ³•ä¸ºï¼š" + point.getSignature().getDeclaringTypeName() + 
                 "." + point.getSignature().getName());
-        System.out.println("@AfterReturning£º²ÎÊıÎª£º" + Arrays.toString(point.getArgs()));
-        System.out.println("@AfterReturning£º·µ»ØÖµÎª£º" + returnValue);
-        System.out.println("@AfterReturning£º±»Ö¯ÈëµÄÄ¿±ê¶ÔÏóÎª£º" + point.getTarget());
+        System.out.println("@AfterReturningï¼šå‚æ•°ä¸ºï¼š" + Arrays.toString(point.getArgs()));
+        System.out.println("@AfterReturningï¼šè¿”å›å€¼ä¸ºï¼š" + returnValue);
+        System.out.println("@AfterReturningï¼šè¢«ç»‡å…¥çš„ç›®æ ‡å¯¹è±¡ä¸ºï¼š" + point.getTarget());
         
     }
     @After("execution(* com.abc.service.*.many*(..))")
     public void releaseResource(JoinPoint point) {
-        System.out.println("@After£ºÄ£ÄâÊÍ·Å×ÊÔ´...");
-        System.out.println("@After£ºÄ¿±ê·½·¨Îª£º" + point.getSignature().getDeclaringTypeName() + 
+        System.out.println("@Afterï¼šæ¨¡æ‹Ÿé‡Šæ”¾èµ„æº...");
+        System.out.println("@Afterï¼šç›®æ ‡æ–¹æ³•ä¸ºï¼š" + point.getSignature().getDeclaringTypeName() + 
                 "." + point.getSignature().getName());
-        System.out.println("@After£º²ÎÊıÎª£º" + Arrays.toString(point.getArgs()));
-        System.out.println("@After£º±»Ö¯ÈëµÄÄ¿±ê¶ÔÏóÎª£º" + point.getTarget());
+        System.out.println("@Afterï¼šå‚æ•°ä¸ºï¼š" + Arrays.toString(point.getArgs()));
+        System.out.println("@Afterï¼šè¢«ç»‡å…¥çš„ç›®æ ‡å¯¹è±¡ä¸ºï¼š" + point.getTarget());
     }
 }
